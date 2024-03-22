@@ -1,5 +1,5 @@
 <style>
-  .search-btn{
+  /* .search-btn{
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
@@ -16,34 +16,42 @@
   .search-inp{
     border-radius: 25px;
     padding: 0.5rem 3rem;
-  }
+  } */
 </style>
 <nav class="">
-  <div class="flex w-full h-16 justify-center items-center bg-blue-200 ">
-      <a class="" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+  <div class="flex w-full h-16 justify-between items-center bg-blue-200 px-8  ">
+    <div class="flex items-center">
+      <a class="text-red-600 text-3xl " href="/listings"><i class="fa-regular fa-compass"></i></a>
+      <button
+        class=""
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+      >
         <span class=""></span>
       </button>
-      <div class="flex" id="navbarNavAltMarkup">
-        <div class="">
-          <a class="" href="/listings">Explore</a>
-        </div>
-        <div class="">
-          <form class="" role="search">
-            <input class="" type="search" placeholder="Search destinations">
-            <button class="" type="submit"> <i class="fa-solid fa-magnifying-glass"></i>Search</button>
-          </form>
-        </div>
-        <div class="">
-          <a class="" href="/listings/new">Add your home</a>
-          <% if(!currUser){ %>
-            <a class=""  href="/signup"><b>SignUp</b></a>
-            <a class="" href="/login"><b>LogIn</b></a>
-            <% } %>
-            <% if(currUser){ %>
-            <a class="" href="/logout">LogOut</a>
-            <% } %>
-        </div>
+      <!-- <div class="flex justify-between" id="navbarNavAltMarkup"> -->
+      <div class="">
+        <a class="px-4 text-xl" href="/listings">Explore</a>
       </div>
     </div>
-  </nav>
+    <div class="">
+      <form class="" role="search">
+        <input class="" type="search" placeholder="Search destinations" />
+        <button class="" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
+      </form>
+    </div>
+    <div class="">
+      <a class="pe-2" href="/listings/new">Add your home</a>
+      <% if(!currUser){ %>
+      <a class="pe-2" href="/signup"><b>SignUp</b></a>
+      <a class="" href="/login"><b>LogIn</b></a>
+      <% } %> <% if(currUser){ %>
+      <a class="" href="/logout">LogOut</a>
+      <% } %>
+    </div>
+    <!-- </div> -->
+  </div>
+</nav>
