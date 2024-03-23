@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") %>
 
-<style>
+<!-- <style>
   #filters {
     display: flex;
     flex-wrap: wrap;
@@ -29,47 +29,53 @@
     /* align-items: end; */
     align-content: end;
   }
-</style>
+</style> -->
 
-<div id="filters">
-  <div class="filter">
+<div class="flex justify-between items-center  m-4">
+  <div class="text-center">
     <div><i class="fa-solid fa-fire"></i></div>
     <p>Trending</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-bed"></i></div>
     <p>Rooms</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-mountain-city"></i></div>
     <p>Iconic Cities</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-mountain"></i></div>
     <p>Mountain</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-fort-awesome"></i></div>
     <p>Castles</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-person-swimming"></i></div>
     <p>Amazing Pools</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-campground"></i></div>
     <p>Camping</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-cow"></i></div>
     <p>Farms</p>
   </div>
-  <div class="filter">
+  <div class="text-center">
     <div><i class="fa-solid fa-snowflake"></i></div>
     <p>Arctic</p>
   </div>
 
-  <div class="tax-toggle">
+  <label class="inline-flex items-center cursor-pointer">
+    <input type="checkbox" value="" class="sr-only peer" id="flexSwitchCheckDefault">
+    <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Display Taxes</span>
+  </label>
+
+  <!-- <div class="tax-toggle">
     <div class="form-check-reverse form-switch">
       <input
         class="form-check-input"
@@ -81,16 +87,16 @@
         >Display Taxes</label
       >
     </div>
-  </div>
+  </div> -->
 </div>
 
-<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+<div class="grid grid-cols-1 lg:grid-cols-lg-3 md:grid-cols-3  mt-3">
   <% for(let listing of allListings) { %>
   <a href="/listings/<%= listing._id %>" class="listing-link">
-    <div class="card col listing-card">
+    <div class="card col listing-card m-4">
       <img
         src="<%= listing.image.url  %>"
-        class="card-img-top"
+        class="rounded-lg w-full object-cover"
         alt="listing_image"
         style="height: 20rem"
       />
